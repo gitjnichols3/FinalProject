@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Chore Chart</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css" >
+	
+</head>
+<body>
+
+	<section class="avatar">
+		<img id="lhav" src="images/blank-profile-picture-973460_640.png" alt="blank profile picture icon">
+		<a class="login" href="index.htm">Login</a>
+		<p id="name">Username</p>
+		<a class="logout" href="index.htm">Logout</a>
+	</section>
+	<header>
+		
+		
+			<h1>Family Chore Chart</h1>
+		
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.htm">Login</a></li>
+			<li><a href="account.htm">Create Account</a></li>
+			<li><a href="chorecreate.htm">Create Chore</a></li>
+			<li><a href="choreSched.htm">Schedule Chores</a></li>
+		</ul>
+	</nav>
+	
+	<main>
+		
+		<h2 id="choreHeading"></h2>
+		<section id="choreCreate">
+			<form id="choreForm" method="post" action="">
+			<h2>Create Chore Description</h2>
+			
+			<p><label class="flabel" for="createChoreName">Chore Name:</label>
+			<input type="text" id="createChoreName" name="createChoreName">
+			</p>
+			
+			<p><label class="flabel" for="groupCode">Chore Group ID:</label>
+			<input type="text" id="groupCode" name="groupCode" placeholder="famCode">
+			</p>
+			
+			<p><b><label class="flabel" for="createChoreDesc">Chore Description: </b>
+			<textarea id="createChoreDesc" name="createChoreDesc"></textarea></p>
+			
+			<p><label class="flabel" for="createChoreAge">Min Age:</label>
+			<input type="number" id="createChoreAge" name="createChoreAge">
+			</p>
+			
+			<p><span class="flabel" > Deadline Pattern:  </span>
+			<input type="radio" id="daily" name="frequency" value="daily"><label for="daily">Daily  </label>
+			<input type="radio" id="weekly" name="frequency" value="weekly"><label for="weekly">Weekly  </label>
+			<input type="radio" id="as_needed" name="frequency" value="asNeeded"><label for="as_needed">As Needed  </label>
+			</p>
+			
+			<p><label class="flabel" for="exemptions">Exemptions:  </label>
+			<select id="exemptions" name="exemptions">
+				<option value=""></option>
+			</select>
+			</p>
+
+			<p><b><label class="flabel" for="createChoreNotes">Notes on chore: </b>
+			<textarea id="createChoreNotes" name="createChoreNotes"></textarea></p>
+			
+			<p><label class="flabel" for="exemptions">Manual Assignment:  </label>
+			<select id="assignment" name="assignment">
+				<option value=""></option>
+			</select>
+			</p>
+			
+			<input type="button" value="submit" id="choreButton">
+			<p id="choreValidate"></p>
+			</form>
+		</section>
+	</main>
+	
+	<footer>
+		
+		<section class="auth">
+			<h3>Project Information:</h3>
+			<p>Jim Nichols</p>
+			<p>Front-End Web Development I (INF651G) </p>
+			<p>December 11, 2023</p>
+			<p>Final Project</p>
+			<p>Instructor: Ravindra Ramsey Muvva </p>
+		</section>
+		<section class="citations">
+		<h3>Sources:</h3>
+			<p>Avatar image by <a href="https://pixabay.com/users/wanderercreative-855399/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=973460">Stephanie Edwards</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=973460">Pixabay</a></p>
+			<p>Header image by <a href="https://pixabay.com/users/gam-ol-2829280/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4626107">Oleg Gamulinskii</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4626107">Pixabay</a></p>
+			<p>Family image by <a href="https://pixabay.com/users/white77-185772/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1023003">Kris</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1023003">Pixabay</a></p>
+			<p>Couple image by <a href="https://pixabay.com/users/omarmedinafilms-818453/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3086304">Omar Medina</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3086304">Pixabay</a></p>
+			<p>Child mopping image by <a href="https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2586010">StockSnap</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2586010">Pixabay</a></p>
+		</section>
+		
+
+		
+	</footer>
+	<script src="myScript.js"></script>
+   	<script>
+		loadUsers();
+		checkLogin();
+		loadChores();
+		
+		
+		document.getElementById("groupCode").placeholder = famcode;
+		
+		populateSelectUsers("exemptions");
+		populateSelectUsers("assignment");
+		
+		document.getElementById("choreButton").addEventListener("click", collectChoreInfo);
+		document.getElementById("choreButton").addEventListener("click", localChoreSave);
+		
+		
+	</script>
+</body>
+</html>
+

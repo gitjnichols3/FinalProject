@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Chore Chart</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css" >
+	
+</head>
+<body>
+	<section class="avatar">
+		<img id="lhav" src="images/blank-profile-picture-973460_640.png" alt="blank profile picture icon">
+		<a class="login" href="index.htm">Login</a>
+		<p id="name">Username</p>
+		<a class="logout" href="index.htm">Logout</a>
+	</section>
+	
+	<header>
+		
+		<h1>Family Chore Chart</h1>
+		
+	</header>
+	<nav>
+		<ul>
+			<li><a href="index.htm">Login</a></li>
+			<li><a href="account.htm">Create Account</a></li>
+			<li><a href="chorecreate.htm">Create Chore</a></li>
+			<li><a href="choreSched.htm">Schedule Chores</a></li>
+		</ul>
+	</nav>
+	
+	<main>
+		<section id="login_box">
+			<form id="loginForm" method="post" action="login.php">
+			<h2>Login:</h2>
+			<p><label for="lusername">Username: </label>
+			<input type="text" id="lusername" name="lusername"></p?>
+			<p><label for="lpassword">Password: </label>
+			<input type="password" id="lpassword" name="lpassword"></p>
+			<p><input type="button" value="submit" id="lbutton"></p>
+			</form>
+			<p id="lfeedback"></p>
+			<p>Or <a href="account.htm">Create Account</a></p>
+		</section>
+		
+		<section id="marketing">
+			
+			<figure id="box2">
+				<img src="images/adult-3086304_640.jpg" alt="Parents track family chores.">
+				<figcaption>Parents or designated administrators can create, assign, schedule and track family chores.</figcaption>
+			</figure>
+			<figure id="box3">
+				<img src="images/kid-2586010_640.jpg" alt="Kids mop the hallway.">
+				<figcaption>Kids and other workers within the family can check off assigned chores as they go through the week.</figcaption>
+			</figure>
+			<figure id="box1">
+				<img src="images/sibling-1023003_640.jpg" alt="The whole family is happy after using the Family Chore Chart">
+				<figcaption><b>Family Chore Chart</b> will get your whole house clean and teach your children responsibility.</figcaption>
+			</figure>
+		</section>
+	</main>
+	
+	<footer>
+		
+		<section class="auth">
+			<h3>Project Information:</h3>
+			<p>Jim Nichols</p>
+			<p>Front-End Web Development I (INF651G) </p>
+			<p>December 11, 2023</p>
+			<p>Final Project</p>
+			<p>Instructor: Ravindra Ramsey Muvva </p>
+		</section>
+		<section class="citations">
+		<h3>Sources:</h3>
+			<p>Avatar image by <a href="https://pixabay.com/users/wanderercreative-855399/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=973460">Stephanie Edwards</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=973460">Pixabay</a></p>
+			<p>Header image by <a href="https://pixabay.com/users/gam-ol-2829280/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4626107">Oleg Gamulinskii</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4626107">Pixabay</a></p>
+			<p>Family image by <a href="https://pixabay.com/users/white77-185772/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1023003">Kris</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1023003">Pixabay</a></p>
+			<p>Couple image by <a href="https://pixabay.com/users/omarmedinafilms-818453/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3086304">Omar Medina</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3086304">Pixabay</a></p>
+			<p>Child mopping image by <a href="https://pixabay.com/users/stocksnap-894430/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2586010">StockSnap</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2586010">Pixabay</a></p>
+		</section>
+		
+
+		
+	</footer>
+    <script src="myScript.js"></script>
+	<script>
+		loadUsers();
+		checkLogin();
+		document.getElementById("lbutton").addEventListener("click", login); //logs into account
+	</script>
+	
+</body>
+</html>
+
